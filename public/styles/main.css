@@ -1,0 +1,8 @@
+main {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f4f1ec;
+  margin-left: 30px;
+}

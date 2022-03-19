@@ -1,0 +1,36 @@
+nav {
+  display: flex;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0rem 1.5rem 0 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+}
+
+nav span {
+  font-family: "Bungee", cursive;
+  font-size: 2.5rem;
+  margin-top: 1.2rem;
+}
+.tweet-icon-down {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.tweet-icon-down p span {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.tweet-icon-down i {
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+  margin-top: -1.2rem;
+}
