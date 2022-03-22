@@ -3,6 +3,7 @@ textarea {
   height: 50px;
   border: none;
   border-bottom: 2px black solid;
+  border-bottom-width: thick;
   background-color: #f4f1ec;
 }
 
@@ -27,7 +28,7 @@ textarea {
   display:flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 5%;
-  padding-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 

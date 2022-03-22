@@ -1,4 +1,4 @@
-header {
+.profile {
   display: flex;
   color: #FFFFFF;
   background-color: #005096;
@@ -9,17 +9,11 @@ header {
   flex-direction: column;
   justify-content: center;
   margin-top: px;
+  padding-top: 8rem;
 }
 
 header div {
   display: flex;
   align-items: flex-start;
   align-items: flex-end;
-}
-
-.profile {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 8rem;
 }
