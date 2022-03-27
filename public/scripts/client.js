@@ -66,7 +66,7 @@ $(document).ready( function() {
       </body>
   
       <footer>
-        <p>${tweetData.created_at}</p>
+        <p>${timeago.format(tweetData.created_at)}</p>
         <div class="icons">
           <i id="icon1" class="fa-solid fa-flag"></i>
           <i id="icon2" class="fa-solid fa-retweet"></i>
