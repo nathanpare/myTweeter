@@ -31,6 +31,16 @@ const data = [
 
 
 $(document).ready( function() {
+
+  const fetchTweets = function () {
+  $.ajax("/tweets", { method: 'GET' })
+    .then(function (tweetList) {
+      console.log('Success: ',tweetList);
+      renderTweets(tweetList);
+    })
+  };
+  fetchTweets();
+
   const renderTweets = function(tweets) {
     const tweetContainer = $(".tweets-container");
     for (const tweet of tweets) {
@@ -66,8 +76,6 @@ $(document).ready( function() {
     </article>`);
     return $tweet;
   }
-
-  renderTweets(data);
   
   $( "#tweet-form" ).submit(function( event ) {
     console.log("Handler for .submit() called.");
@@ -79,6 +87,7 @@ $(document).ready( function() {
       data: $(this).serialize()
     }).done(function() {
       console.log("request complete");
+      fetchTweets();
     });
   });
 
