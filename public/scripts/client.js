@@ -68,12 +68,19 @@ $(document).ready( function() {
   }
 
   renderTweets(data);
-  // const $tweet = createTweetElement(tweetData);
-  // $(".tweets-container").append($tweet);
-  // $('#tweet-form').on('submit', function(event) {
-    // event.preventDefault();
-    // $("#tweets").append($tweet);
-  // });
+  
+  $( "#tweet-form" ).submit(function( event ) {
+    console.log("Handler for .submit() called.");
+    event.preventDefault();
+    console.log($(this).serialize());
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: $(this).serialize()
+    }).done(function() {
+      console.log("request complete");
+    });
+  });
 
   //  const loadTweets = function() {
   //   $.get( "/tweets", (<data>) => {
