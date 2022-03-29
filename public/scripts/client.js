@@ -88,10 +88,12 @@ $(document).ready( function() {
   $( "#tweet-form" ).submit(function( event ) {
     event.preventDefault();
     if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
-      return $(".error-bar").slideDown("The tweet form is empty");
+      $(".error-text").text("your tweet cannot be empty");
+      return $(".error-bar").slideDown();
     }
     if ($("#tweet-text").val().length > 140) {
-      return $(".error-bar").show("Your tweet has exceeded the character limit");
+      $(".error-text").text("Your tweet exceeds the character limit");
+      return $(".error-bar").slideDown();
     } else {
       $(".error-bar").hide();
     }
@@ -103,7 +105,8 @@ $(document).ready( function() {
       data: $(this).serialize()
     }).done(function() {
       console.log("request complete");
-      $("#tweet-text").val("")
+      $("#tweet-text").val("");
+      $(".counter").text(140);
       fetchTweets();
     });
   });

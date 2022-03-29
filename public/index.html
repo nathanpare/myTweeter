@@ -79,7 +79,11 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <div class="error-bar">
-          <p><span>&#9888;</span> Error <span>&#9888;</span></p>
+          <p>
+            <span>&#9888;</span>
+            <span class="error-text"> Error </span>
+            <span>&#9888;</span>
+          </p>
         </div>
         <form id="tweet-form" method="POST" action="/tweets/">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
