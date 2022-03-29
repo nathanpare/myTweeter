@@ -31,6 +31,7 @@ const data = [
 
 
 $(document).ready( function() {
+  $(".error-bar").hide();
 
   const fetchTweets = function () {
   $.ajax("/tweets", { method: 'GET' })
@@ -50,6 +51,13 @@ $(document).ready( function() {
   }
 
   const createTweetElement = function(tweetData) {
+    
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+    const safeHTML = `${escape(tweetData.content.text)}`;
     const $tweet = $(`<article class="tweets">
     <header class="top-of-tweet">
           <div class="profname">
@@ -62,7 +70,7 @@ $(document).ready( function() {
       </header>
 
       <body class="tweet-body">
-        <p>${tweetData.content.text}</p>
+        <p>${safeHTML}</p>
       </body>
   
       <footer>
@@ -78,8 +86,16 @@ $(document).ready( function() {
   }
   
   $( "#tweet-form" ).submit(function( event ) {
-    console.log("Handler for .submit() called.");
     event.preventDefault();
+    if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
+      return $(".error-bar").slideDown("The tweet form is empty");
+    }
+    if ($("#tweet-text").val().length > 140) {
+      return $(".error-bar").show("Your tweet has exceeded the character limit");
+    } else {
+      $(".error-bar").hide();
+    }
+    console.log("Handler for .submit() called.");
     console.log($(this).serialize());
     $.ajax({
       method: "POST",
@@ -87,6 +103,7 @@ $(document).ready( function() {
       data: $(this).serialize()
     }).done(function() {
       console.log("request complete");
+      $("#tweet-text").val("")
       fetchTweets();
     });
   });
