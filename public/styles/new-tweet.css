@@ -5,6 +5,7 @@ textarea {
   border-bottom: 2px black solid;
   border-bottom-width: thick;
   background-color: #f4f1ec;
+  margin-top: 3.3rem;
 }
 
 .button-counter {

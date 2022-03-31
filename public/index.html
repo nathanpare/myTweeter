@@ -1,83 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      type="text/css"
-    />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
-      rel="stylesheet"
-    />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/error.css" type="text/css" />
-    
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/scripts/composer-char-counter.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- <script src="/scripts/user-helper.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/error.css" type="text/css" />
+
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/scripts/composer-char-counter.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="/scripts/user-helper.js"></script> -->
 
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+</head>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-      <div class="tweet-icon-down">
-        <p><span>Write</span> a new tweet</p>
-        <i class="fa-solid fa-angles-down"></i>
-      </div>
-    </nav>
-
-    <header class="profile">
-      <div class="avatar">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="name">
-          <h2>Nathan Pare</h2>
-      </div>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span>tweeter</span>
+    <div class="tweet-icon-down">
+      <p><span>Write</span> a new tweet</p>
+      <i class="fa-solid fa-angles-down"></i>
     </div>
-  </header>
-
+  </nav>
+  <div class="content-container">
+    <div class="profile-container">
+      <header class="profile">
+        <div class="avatar">
+          <img src="/images/profile-hex.png">
+        </div>
+        <div class="name">
+          <h2>Nathan Pare</h2>
+        </div>
+      </header>
+    </div>
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <div class="error-bar">
           <p>
             <span>&#9888;</span>
@@ -94,34 +83,34 @@
         </form>
       </section>
       <div class="tweets-container">
-      <article class="tweets">
-        
-        <header class="top-of-tweet">
-          <div class="profname">
-          <img src="https://i.imgur.com/73hZDYK.png"
-          width="50" height="50">
-       <!-- </a> -->
-        <p class="user-name">Nathan</p>
-        </div>
-        <p class="handle">@cssg3nius123</p>
-      </header>
+        <article class="tweets">
 
-      <body class="tweet-body">
-        <p>People in LA are deathly afraid of gluten.
-        I swear to god, you could rob a liquor store in this city with a Bagel.</p>
-      </body>
-  
-      <footer>
-        <p>1 day ago</p>
-        <div class="icons">
-          <i id="icon1" class="fa-solid fa-flag"></i>
-          <i id="icon2" class="fa-solid fa-retweet"></i>
-          <i id="icon3" class="fa-solid fa-heart"></i>
-        </div>
-        </footer>
+          <header class="top-of-tweet">
+            <div class="profname">
+              <img src="https://i.imgur.com/73hZDYK.png" width="50" height="50">
+              <!-- </a> -->
+              <p class="user-name">Nathan</p>
+            </div>
+            <span class="handle">@cssg3nius123</span>
+          </header>
 
-      </article>
-    </div>
+          <div class="tweet-body">
+            <p>People in LA are deathly afraid of gluten.
+              I swear to god, you could rob a liquor store in this city with a Bagel.</p>
+          </div>
+
+          <footer>
+            <p>1 day ago</p>
+            <div class="icons">
+              <i id="icon1" class="fa-solid fa-flag"></i>
+              <i id="icon2" class="fa-solid fa-retweet"></i>
+              <i id="icon3" class="fa-solid fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </div>
     </main>
-  </body>
+  </div>
+</body>
+
 </html>

@@ -21,7 +21,52 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+@media only screen and (min-width: 1024px) {
+  
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  header.profile {
+    width: 60%;
+    margin: auto;
+    margin-top: 15rem;
+    height: 300px;
+    padding-bottom: 5rem;
+
+  }
+
+  .profile-container {
+    width: 70%;
+  }
+
+  div .name {
+    padding-bottom: 2rem;
+  }
+
+  main {
+    margin-top: 10rem;
+  }
+
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .avatar img {
+    width: 8em;
+    height: 8em;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  nav {
+  background-color: #005096 !important;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+  }
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

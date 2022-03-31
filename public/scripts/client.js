@@ -69,9 +69,9 @@ $(document).ready( function() {
         <p class="handle">${tweetData.user.handle}</p>
       </header>
 
-      <body class="tweet-body">
+      <div class="tweet-body">
         <p>${safeHTML}</p>
-      </body>
+      </div>
   
       <footer>
         <p>${timeago.format(tweetData.created_at)}</p>
