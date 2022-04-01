@@ -7,11 +7,11 @@ I have also implemented the stretch feature "Form Toggle".
 
 ## screenshots
 
-!["Screenshot of desktop view"] (https://github.com/nathanpare/myTweeter/blob/master/docs/desktop-view.png?raw=true)
-!["Screenshot of validation error"] (https://github.com/nathanpare/myTweeter/blob/master/docs/validation-error.png?raw=true)
-!["Screenshot of mobile view"] (https://github.com/nathanpare/myTweeter/blob/master/docs/mobile-view.png?raw=true)
-!["Screenshot of tweet styling"] (https://github.com/nathanpare/myTweeter/blob/master/docs/tweet-styling.png?raw=true)
-!["Screenshot of stretch form toggle"] (https://github.com/nathanpare/myTweeter/blob/master/docs/stretch-form-toggle.png?raw=true)
+!["Screenshot of desktop view"](https://github.com/nathanpare/myTweeter/blob/master/docs/desktop-view.png?raw=true)
+!["Screenshot of validation error"](https://github.com/nathanpare/myTweeter/blob/master/docs/validation-error.png?raw=true)
+!["Screenshot of mobile view"](https://github.com/nathanpare/myTweeter/blob/master/docs/mobile-view.png?raw=true)
+!["Screenshot of tweet styling"](https://github.com/nathanpare/myTweeter/blob/master/docs/tweet-styling.png?raw=true)
+!["Screenshot of stretch form toggle"](https://github.com/nathanpare/myTweeter/blob/master/docs/stretch-form-toggle.png?raw=true)
 
 ## Getting Started
 
