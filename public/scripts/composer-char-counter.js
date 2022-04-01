@@ -1,4 +1,4 @@
-$(document).ready( function() {
+$(document).ready(function() {
   $('#tweet-text').on('input', function() {
     const charCounter = $(this).siblings(":first").children(":last");
     const textLength = $(this).val().length;

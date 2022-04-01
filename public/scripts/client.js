@@ -6,52 +6,49 @@
 
 const data = [
   {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
+    user: {
+      name: "Newton",
+      avatars: "https://i.imgur.com/73hZDYK.png",
+      handle: "@SirIsaac",
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+    content: {
+      text: "If I have seen further it is by standing on the shoulders of giants",
     },
-    "created_at": 1461116232227
+    created_at: 1461116232227,
   },
   {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
+    user: {
+      name: "Descartes",
+      avatars: "https://i.imgur.com/nlhLi3I.png",
+      handle: "@rd",
     },
-    "created_at": 1461113959088
-  }
-]
+    content: {
+      text: "Je pense , donc je suis",
+    },
+    created_at: 1461113959088,
+  },
+];
 
-
-$(document).ready( function() {
+$(document).ready(function () {
   $(".error-bar").hide();
 
   const fetchTweets = function () {
-  $.ajax("/tweets", { method: 'GET' })
-    .then(function (tweetList) {
-      console.log('Success: ',tweetList);
+    $.ajax("/tweets", { method: "GET" }).then(function (tweetList) {
+      console.log("Success: ", tweetList);
       renderTweets(tweetList);
-    })
+    });
   };
   fetchTweets();
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     const tweetContainer = $(".tweets-container");
     for (const tweet of tweets) {
       const newTweet = createTweetElement(tweet);
       tweetContainer.prepend(newTweet);
     }
-  }
+  };
 
-  const createTweetElement = function(tweetData) {
-    
+  const createTweetElement = function (tweetData) {
     const escape = function (str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
@@ -83,9 +80,9 @@ $(document).ready( function() {
         </footer>
     </article>`);
     return $tweet;
-  }
-  
-  $( "#tweet-form" ).submit(function( event ) {
+  };
+
+  $("#tweet-form").submit(function (event) {
     event.preventDefault();
     if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
       $(".error-text").text("your tweet cannot be empty");
@@ -102,20 +99,12 @@ $(document).ready( function() {
     $.ajax({
       method: "POST",
       url: "/tweets",
-      data: $(this).serialize()
-    }).done(function() {
+      data: $(this).serialize(),
+    }).done(function () {
       console.log("request complete");
       $("#tweet-text").val("");
       $(".counter").text(140);
       fetchTweets();
     });
   });
-
-  //  const loadTweets = function() {
-  //   $.get( "/tweets", (<data>) => {
-  //     // call renderTweets();
-  //   })
-  //  }
-
-
 });
