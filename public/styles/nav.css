@@ -33,7 +33,16 @@ nav span {
 }
 
 .tweet-icon-down i {
-  color: rgb(255, 0, 0);
+  color: #1DA1F2;
   cursor: pointer;
   margin-top: -1.2rem;
+}
+
+button {
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 1rem;
+}
+
+.tweet-icon-down i:hover {
+  color: red;
 }

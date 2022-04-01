@@ -66,6 +66,10 @@ body {
   background-color: #005096 !important;
   background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
   }
+
+  .profile-container {
+    margin-bottom: 2rem;
+  }
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
