@@ -3,7 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
+//default hard coded database
 const data = [
   {
     user: {
@@ -31,15 +31,16 @@ const data = [
 
 $(document).ready(function () {
   $(".error-bar").hide();
-
+//function used with render tweets to fetch tweets from database
+//and render them to the page
   const fetchTweets = function () {
     $.ajax("/tweets", { method: "GET" }).then(function (tweetList) {
-      console.log("Success: ", tweetList);
+      $(".tweets-container").empty();
       renderTweets(tweetList);
     });
   };
   fetchTweets();
-
+//function renderTweets prepends formatted tweets to the tweetContainer
   const renderTweets = function (tweets) {
     const tweetContainer = $(".tweets-container");
     for (const tweet of tweets) {
@@ -47,23 +48,23 @@ $(document).ready(function () {
       tweetContainer.prepend(newTweet);
     }
   };
-
+//createTweetElement function creates and formats tweets with the given information
   const createTweetElement = function (tweetData) {
     const escape = function (str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
+    //used to escape the input text of a tweet to avoid malicious acts upon the app
     const safeHTML = `${escape(tweetData.content.text)}`;
     const $tweet = $(`<article class="tweets">
     <header class="top-of-tweet">
           <div class="profname">
-          <img src=${tweetData.user.avatars}
-          width="50" height="50">
-       </a>
-        <p class="user-name">${tweetData.user.name}</p>
-        </div>
-        <p class="handle">${tweetData.user.handle}</p>
+            <img src=${tweetData.user.avatars}
+            width="50" height="50">
+            <p class="user-name">${tweetData.user.name}</p>
+          </div>
+        <span class="handle">${tweetData.user.handle}</span>
       </header>
 
       <div class="tweet-body">
@@ -81,7 +82,7 @@ $(document).ready(function () {
     </article>`);
     return $tweet;
   };
-
+//logic for the submit event for the tweet-form input
   $("#tweet-form").submit(function (event) {
     event.preventDefault();
     if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
@@ -94,14 +95,12 @@ $(document).ready(function () {
     } else {
       $(".error-bar").hide();
     }
-    console.log("Handler for .submit() called.");
-    console.log($(this).serialize());
+    //ajax post request to the tweet-text form
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: $(this).serialize(),
     }).done(function () {
-      console.log("request complete");
       $("#tweet-text").val("");
       $(".counter").text(140);
       fetchTweets();
